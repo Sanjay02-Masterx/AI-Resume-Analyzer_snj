@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Resume Analyzer</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.png') }}">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- Title -->
+        <h1>AI Resume Analyzer</h1>
+        <p class="subtitle">
+            Compare your resume with a job description using AI.
+            Get a match score, missing skills, and improvement suggestions.
+        </p>
+
+        
+        {% if error %}
+        <div class="alert">
+            {{ error }}
+        </div>
+        {% endif %}
+
+        <!-- Form -->
+        <form method="POST" enctype="multipart/form-data">
+
+            <label>Paste Resume Text (optional)</label>
+            <textarea name="resume_text" placeholder="Paste your resume text here..."></textarea>
+
+            <label>Or Upload Resume File (.txt or .pdf)</label>
+            <input type="file" name="resume_file" accept=".txt,.pdf">
+
+            <label>Job Description</label>
+            <textarea name="job" placeholder="Paste the job description here..." required></textarea>
+
+            <button type="submit">Analyze Resume</button>
+        </form>
+
+        <!-- Footer -->
+        <footer>
+            Developed by <strong>Sanjay Murugesan</strong> · AI Resume Analyzer
+        </footer>
+
+    </div>
+</body>
+</html>

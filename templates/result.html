@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Analysis Result | AI Resume Analyzer</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.png') }}">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+
+        <h1>Resume Analysis Result</h1>
+        <p class="subtitle">
+            AI-generated comparison between your resume and the job description.
+        </p>
+
+        <!-- Result Box -->
+        <div class="result-box">
+            <pre>{{ analysis }}</pre>
+        </div>
+
+        <!-- Action -->
+        <a href="/" class="back-btn">← Analyze Another Resume</a>
+
+        <!-- Footer -->
+        <footer>
+            @2025 · <strong>Sanjay Murugesan</strong>
+        </footer>
+
+    </div>
+</body>
+</html>
